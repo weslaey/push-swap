@@ -17,7 +17,7 @@ type Stacks struct {
 
 func swap(s *Stack) error {
 	if len(s.Items) < 2 {
-		return errors.New("not enough elements to swap")
+		return errors.New("pas assez d'éléments pour effectuer l'échange")
 	}
 	s.Items[0], s.Items[1] = s.Items[1], s.Items[0]
 	return nil
@@ -40,7 +40,7 @@ func Ss(st *Stacks) {
 
 func push(src *Stack, dest *Stack) error {
 	if len(src.Items) == 0 {
-		return errors.New("source stack is empty")
+		return errors.New("la pile est vide")
 	}
 	// Récupère le premier élément de src
 	elem := src.Items[0]
@@ -59,7 +59,7 @@ func Pb(st *Stacks) {
 	_ = push(&st.A, &st.B) // Met le premier de A en haut de B
 }
 
-// --- ROTATE (Décale vers le haut : le 1er devient le dernier) ---
+// ROTATE (Décale vers le haut le 1er devient le dernier) 
 
 func rotate(s *Stack) error {
 	if len(s.Items) < 2 {
